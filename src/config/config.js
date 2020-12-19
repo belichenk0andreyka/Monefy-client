@@ -7,9 +7,9 @@ export default {
     rangeDate: '/api/actions/rangeDate',
     exchange: 'https://api.privatbank.ua/p24api/exchange_rates?json&date=',
     development: {
-        apiPrefix: 'http://localhost:5000',
+        apiPrefix: 'https://monefy-api.herokuapp.com',
     },
     production: {
-        apiPrefix: 'http://localhost:5000',
+        apiPrefix: 'https://monefy-api.herokuapp.com',
     },
 };
