@@ -1,0 +1,33 @@
+.auth-input__danger {
+  border-bottom: 2px solid red;
+}
+
+.auth-input {
+  padding: 3px;
+  margin: 15px 0;
+  border-bottom: 2px solid white;
+
+  .auth-input__tooltip {
+    display: flex;
+
+    .auth-input__img {
+      height: 27px;
+    }
+
+    .auth-input__input {
+      background: transparent;
+      border: none;
+      outline: none;
+      height: 27px;
+      padding-left: 10px;
+      font-size: 18px;
+      color: white;
+      width: 100%;
+      text-align: center;
+      &::placeholder {
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.rangeMonth {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  overflow-y: scroll;
+  overflow-x: auto;
+  margin: 10px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  .rangeMonth_month {
+    min-width: 150px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .rangeMonth_month-active {
+    text-decoration: underline;
+  }
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 7px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #7AC795;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: green;
+  }
+}
