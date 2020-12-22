@@ -1,16 +1,16 @@
 import React from 'react';
-import Chart from "chart.js";
+import Chart from 'chart.js';
+import map from 'lodash/map';
 
-import { getChartData } from 'helpers/pieHelper';
+import { writeTextCenter } from 'helpers/pieHelper';
+import { CATEGORIES_COLORS } from 'constants/constants';
+
 
 import './pieChart.less';
 
-const PieChart = ({ actionsData, financeData, openModal }) => {
-    const [chartData, setChartData] = React.useState({});
+const PieChart = ({ chartData, financeData, openModal }) => {
     React.useEffect(() => {
-        setChartData(getChartData(actionsData.chartData));
-    }, [actionsData]);
-    React.useEffect(() => {
+        Chart.pluginService.register(writeTextCenter);
         const ctx = document.getElementById("myChart");
         const myChart = new Chart(ctx, {
             type: "doughnut",
@@ -20,30 +20,18 @@ const PieChart = ({ actionsData, financeData, openModal }) => {
                     {
                         label: "# of Votes",
                         data: chartData.chatItemValues,
-                        backgroundColor: [
-                            "Red",
-                            "Blue",
-                            "Yellow",
-                            "Green",
-                            "Purple",
-                            "Orange"
-                        ],
-                        // hoverBackgroundColor: [
-                        //     "Pink",
-                        //     "Pink",
-                        //     "Pink",
-                        //     "Pink",
-                        //     "Pink",
-                        //     "Pink",
-                        // ],
+                        backgroundColor: map(chartData.chatItems, item => CATEGORIES_COLORS[item]),
+                        hoverBackgroundColor: map(chartData.chatItems, item => CATEGORIES_COLORS[item]),
                         borderWidth: 2
                     }
                 ]
             },
             options: {
+                showLines: false,
                 segmentShowStroke : false,
                 animateScale : true,
                 responsive : true,
+                cutoutPercentage: 70,
                 onClick:(event) => {
                     const activePoints = myChart.getElementsAtEvent(event);
                     if(activePoints.length > 0) {
@@ -52,12 +40,25 @@ const PieChart = ({ actionsData, financeData, openModal }) => {
                         openModal(label.toLowerCase());
                     }
                 },
+                legend: {
+                    display: false,
+                },
+                elements: {
+                    center: {
+                        text: 'Red is 2/3 of the total numbers',
+                        color: '#FF6384',
+                        fontStyle: 'Arial',
+                        sidePadding: 20,
+                        minFontSize: 25,
+                        lineHeight: 25
+                    },
+                }
             },
         });
     }, [chartData]);
     return (
-        <div>
-            <canvas id="myChart" width="400" height="400" />
+        <div className='pieChart-wrapper'>
+            <canvas id="myChart" />
         </div>
     );
 };

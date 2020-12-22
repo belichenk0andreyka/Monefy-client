@@ -1,43 +1,9 @@
-.chart-wrapper{
-  height: 100%;
-  width: 100%;
+.pieChart-wrapper {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  position: relative;
-
-  .chart {
-    z-index: 2;
-  }
-
-  .finance-date {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    left: 35%;
-    top: 42%;
-
-    .finance-date__income {
-      color: #3F80C5;
-    }
-    .finance-date__expense {
-      color: #C57B7F;
-    }
-    .finance-date__balance {
-      color: #7AC795;
-    }
-  }
-  .empty-chart-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    .empty-donat-text {
-      position: absolute;
-      font-size: 20px;
-    }
-  }
+  position: absolute;
+  height: 55%;
+  width: 80%;
+  left: -15%;
 }

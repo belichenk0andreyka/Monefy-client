@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEmpty } from 'lodash';
+import { isEmpty, reduce, sortBy } from 'lodash';
 import moment from 'moment';
 
 import { notificationHelper } from "./notifications";
@@ -89,3 +89,15 @@ export const parseNumber = (number) => {
         )
     }
 }
+
+export const getAllExpensesIncomes = (data) => {
+    const arrayOfData = reduce(data, (result, value) => {
+        const array = reduce(value, (acc, data) => {
+            acc.push(data);
+            return acc;
+        }, []);
+        return [...result, ...array];
+    }, []);
+    const newArray = sortBy(arrayOfData, 'date');
+    console.log(newArray);
+};

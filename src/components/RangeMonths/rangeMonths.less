@@ -1,36 +1,32 @@
-.rangeMonth {
+.rec.rec-carousel-wrapper.rangeMonth {
   display: flex;
   justify-content: center;
-  width: 95%;
-  overflow-y: scroll;
-  overflow-x: auto;
-  margin: 10px;
-  padding: 10px 0;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  width: 55%;
+
+  .rec.rec-arrow, .rec.rec-arrow:hover, .rec.rec-arrow:focus {
+    background-color: transparent;
+    box-shadow: none;
+    color: #333;
+  }
+  .rec.rec-arrow:disabled {
+    color: #999;
+  }
+  .rec.rec-slider-container {
+    margin: 0;
+  }
 
   .rangeMonth_month {
-    min-width: 150px;
     text-align: center;
     cursor: pointer;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    outline: none;
   }
+
   .rangeMonth_month-active {
-    text-decoration: underline;
-  }
-  /* width */
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 7px;
-  }
-
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background: #7AC795;
-    border-radius: 10px;
-  }
-
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: green;
+    font-weight: bold;
+    font-size: 16px;
+    outline: none;
   }
 }

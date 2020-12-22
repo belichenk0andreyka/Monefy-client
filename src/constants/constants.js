@@ -25,3 +25,14 @@ export const CATEGORIES_PROFIT = {
     SAVING: 'saving',
     DEPOSIT: 'deposit',
 };
+
+export const CATEGORIES_COLORS = {
+    Food: 'red',
+    Cafe: 'green',
+    Connection: 'yellow',
+    Entertainment: 'pink',
+    Taxi: 'blue',
+    Bill: 'orange',
+    Health: 'grey',
+    Transport: 'brown',
+}
