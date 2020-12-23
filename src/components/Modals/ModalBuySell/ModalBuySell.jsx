@@ -39,8 +39,8 @@ const ModalBuySell = (props) => {
     const CATEGORIES = props.modalInfo.type ? CATEGORIES_PROFIT : CATEGORIES_EXPENSE;
     return (
         <Modal
-            title={`New ${modalTitle}`}
             centered
+            title={`New ${modalTitle}`}
             visible={props.isOpen}
             onOk={handleClickOk}
             onCancel={handleClickCancel}

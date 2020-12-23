@@ -10,6 +10,10 @@ export const getActionsExpensesData = createSelector(
     getActionReducer,
     state => state.actionsData.expenses,
 );
+export const getActionsIncomesData = createSelector(
+    getActionReducer,
+    state => state.actionsData.income,
+);
 export const getActionsFinancialData = createSelector(
     getActionReducer,
     state => state.actionsData.financeInfo,

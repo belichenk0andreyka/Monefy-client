@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEmpty, reduce, sortBy } from 'lodash';
+import { isEmpty, reduce, sortBy, forEach } from 'lodash';
 import moment from 'moment';
 
 import { notificationHelper } from "./notifications";
@@ -98,6 +98,17 @@ export const getAllExpensesIncomes = (data) => {
         }, []);
         return [...result, ...array];
     }, []);
-    const newArray = sortBy(arrayOfData, 'date');
-    console.log(newArray);
+    const newArray = sortBy(arrayOfData, 'date').reverse();
+    const objOfExpenses = {};
+    let prevValue = '';
+    forEach(newArray, item => {
+        const thisDate = moment(item.date).format('MM.DD.YYYY');
+        if (prevValue !== thisDate) {
+            objOfExpenses[thisDate] = [item]
+        } else {
+            objOfExpenses[thisDate].push(item);
+        }
+        prevValue = thisDate;
+    });
+    return objOfExpenses;
 };

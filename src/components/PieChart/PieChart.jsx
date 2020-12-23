@@ -20,8 +20,8 @@ const PieChart = ({ chartData, financeData, openModal }) => {
                     {
                         label: "# of Votes",
                         data: chartData.chatItemValues,
-                        backgroundColor: map(chartData.chatItems, item => CATEGORIES_COLORS[item]),
-                        hoverBackgroundColor: map(chartData.chatItems, item => CATEGORIES_COLORS[item]),
+                        backgroundColor: map(chartData.chatItems, item => CATEGORIES_COLORS[item.toLowerCase()]),
+                        hoverBackgroundColor: map(chartData.chatItems, item => CATEGORIES_COLORS[item.toLowerCase()]),
                         borderWidth: 2
                     }
                 ]

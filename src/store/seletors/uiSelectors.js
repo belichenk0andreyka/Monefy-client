@@ -31,3 +31,9 @@ export const getModalInfoAddExpense = createSelector(
     getAllModalsInfo,
     state => get(state, MODAL_TYPES.ADD_EXPENSE_MODAL, {}),
 )
+
+export const getModalIsOpen = createSelector(
+    getAllModals,
+    (state, props) => props,
+    (modals, modalName) => modals.includes(modalName)
+)
