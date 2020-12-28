@@ -1,28 +1,25 @@
+@import '../../utils/index.less';
+
 .stats-categories {
+  .flex(flex-start, center, column);
   margin-left: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 
   .stats-categories__item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    .flex(center, flex-start);
 
     .category-item__count {
       width: 25px;
-      font-size: 16px;
+      font-size: @fz-medium;
       font-weight: bold;
     }
 
     .category-item__block {
       cursor: pointer;
       width: 60px;
-      height: 15px;
+      height: @margin-big;
       background: grey;
-      border-radius: 10px;
-      margin: 0 15px;
+      border-radius: @margin-medium;
+      margin: 0 @margin-big;
     }
   }
 }

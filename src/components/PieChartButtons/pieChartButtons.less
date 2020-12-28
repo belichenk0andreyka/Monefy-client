@@ -1,17 +1,15 @@
+@import '../../utils/index.less';
+
 .pieChartButton-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .flex();
   width: 100%;
 
   .pieChartButton {
+    .flex();
     width: 30%;
     height: 50px;
     border-radius: 70px;
-    background: #1EF6CD;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: @bright_turquoise;
     cursor: pointer;
 
     img {

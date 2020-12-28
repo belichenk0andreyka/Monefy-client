@@ -41,7 +41,7 @@ const ModalAddExpense = (props) => {
             className='addExpenseModal'
             okText='Add expense'
         >
-            <div className='addExpenseModal'>
+            <div className='addExpenseModal_wrapper'>
                 <div className='addExpenseModal-date'>
                     <span>{moment().format("dddd, MMMM Do")}</span>
                 </div>

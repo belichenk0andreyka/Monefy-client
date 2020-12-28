@@ -1,53 +1,48 @@
+@import '../../../utils/index.less';
+
 .sellBuyModal {
   width: 550px!important;
 
   .ant-modal-content {
     .ant-modal-header {
-      background: #7AC795;
+      background: @de_york;
 
       .ant-modal-title {
-        color: white;
+        color: @white;
         font-size: 20px;
       }
     }
     .ant-modal-body {
-      padding-top: 15px;
+      padding-top: @margin-big;
     }
     .ant-modal-close {
-      color: white;
+      color: @white;
     }
   }
 }
 
 .modalBuySell {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  .flex(center, center, column);
 
   &-date {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: @margin-medium;
   }
 
   .categories-title {
     font-size: 20px;
-    color: #8F9A92;
+    color: @mantle;
   }
 
   .categories {
-    display: flex;
+    .flex(center, center);
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 
     &-item {
+      .flex(center, center);
       width: 60px;
       height: 60px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
 
       &__img {
@@ -78,34 +73,31 @@
   }
 
   .modalBuySell-container {
+    .flex(center, center, column);
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding: 20px;
 
     .container-price {
       display: flex;
       flex-direction: column;
       &__title {
-        font-size: 17px;
-        color: #8F9A92;
-        margin-bottom: 5px;
+        font-size: @fz-big;
+        color: @mantle;
+        margin-bottom: @margin-small;
       }
       &__input {
-        color: white;
-        background: #7AC795;
+        color: @white;
+        background: @de_york;
         font-weight: bold;
         text-align: center;
-        border: 2px solid green;
+        border: 2px solid @green;
         outline: none;
         font-size: 20px;
         padding: 6px;
         border-radius: 4px;
 
         &::placeholder {
-          color: white;
+          color: @white;
           font-size: 20px;
         }
       }
@@ -113,21 +105,21 @@
 
     .container-description {
       width: 280px;
-      margin-top: 10px;
+      margin-top: @margin-medium;
       display: flex;
       flex-direction: column;
 
       &__title {
-        font-size: 17px;
-        color: #8F9A92;
-        margin-bottom: 5px;
+        font-size: @fz-big;
+        color: @mantle;
+        margin-bottom: @margin-small;
       }
 
       &__input {
         height: 35px;
         display: flex;
         align-items: center;
-        border-bottom: 2px solid grey;
+        border-bottom: 2px solid @grey;
 
         img {
           width: 25px;
@@ -137,9 +129,9 @@
           width: 100%;
           border: none;
           outline: none;
-          color: dimgrey;
-          font-size: 17px;
-          padding: 0 10px;
+          color: @dimgrey;
+          font-size: @fz-big;
+          padding: 0 @margin-medium;
         }
       }
     }

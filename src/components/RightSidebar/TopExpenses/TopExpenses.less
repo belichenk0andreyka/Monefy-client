@@ -1,11 +1,10 @@
+@import '../../../utils/index.less';
+
 .top-expenses {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px;
-  margin-bottom: 10px;
+  .flex(flex-start, flex-start, column);
+  box-shadow: @box_shadow;
+  padding: @margin-medium;
+  margin-bottom: @margin-medium;
 
   &__title {
     font-size: 20px;
@@ -15,18 +14,16 @@
   }
 
   &__button {
+    .flex(center, flex-end);
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 10px;
+    margin-top: @margin-medium;
 
     button {
       width: fit-content;
       background: transparent;
       border: none;
       outline: none;
-      font-size: 12px;
+      font-size: @fz-small;
       font-weight: 500;
       cursor: pointer;
     }
@@ -41,7 +38,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    margin-top: 10px;
+    margin-top: @margin-medium;
 
     &-item {
       display: flex;
@@ -50,7 +47,6 @@
 
     &-progress {
       height: 20px;
-      //background: #C4C4C4;
 
       &__fill {
         height: 100%;

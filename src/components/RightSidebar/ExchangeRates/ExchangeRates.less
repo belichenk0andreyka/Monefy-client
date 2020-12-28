@@ -1,15 +1,12 @@
+@import '../../../utils/index.less';
+
 .currencies {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px;
+  .flex(flex-start, flex-start, column);
+  box-shadow: @box_shadow;
+  padding: @margin-medium;
 
   &_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    .flex(flex-end, space-between);
     width: 100%;
 
     .currencies {
@@ -22,13 +19,11 @@
 
       &_types {
         width: fit-content;
-        font-size: 12px;
+        font-size: @fz-small;
 
         div {
+          .flex();
           height: 25px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
       }
 
@@ -36,14 +31,14 @@
         display: flex;
         justify-content: space-between;
         width: 90%;
-        font-size: 12px;
+        font-size: @fz-small;
       }
 
       &_numbers__block {
         width: 90%;
         display: flex;
         justify-content: space-between;
-        font-size: 16px;
+        font-size: @fz-medium;
         font-weight: bold;
 
         div:first-child {

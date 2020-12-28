@@ -1,11 +1,10 @@
+@import '../../utils/index.less';
+
 .centralPart {
+  .flex(center, space-between, column);
   width: 50%;
   padding: 5vh 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: @box_shadow;
 
   @media (max-width: 1000px) {
     width: 65%;
@@ -16,10 +15,8 @@
   }
 
   .chart-block {
+    .flex();
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
   }
 

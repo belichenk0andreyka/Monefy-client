@@ -1,3 +1,5 @@
+@import '../../utils/index.less';
+
 .rec.rec-carousel-wrapper.rangeMonth {
   display: flex;
   justify-content: center;
@@ -11,10 +13,10 @@
   .rec.rec-arrow, .rec.rec-arrow:hover, .rec.rec-arrow:focus {
     background-color: transparent;
     box-shadow: none;
-    color: #333;
+    color: @mine_shaft;
   }
   .rec.rec-arrow:disabled {
-    color: #999;
+    color: @dusty_gray;
   }
   .rec.rec-slider-container {
     margin: 0;
@@ -31,7 +33,7 @@
 
   .rangeMonth_month-active {
     font-weight: bold;
-    font-size: 16px;
+    font-size: @fz-medium;
     outline: none;
   }
 }

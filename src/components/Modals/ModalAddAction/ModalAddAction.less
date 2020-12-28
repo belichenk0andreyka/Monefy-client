@@ -1,19 +1,17 @@
+@import '../../../utils/index.less';
+
 .addActions {
   .buttons_wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    .flex(center, space-around);
 
     .action_button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-      padding: 10px 20px;
+      .flex(center, center);
       cursor: pointer;
+      padding: @margin-medium 20px;
+      box-shadow: @box_shadow;
 
       &__img {
-        margin-right: 10px;
+        margin-right: @margin-medium;
       }
     }
   }
