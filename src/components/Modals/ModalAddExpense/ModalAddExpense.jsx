@@ -1,9 +1,17 @@
 import React from 'react';
 import { Modal } from 'antd';
+import moment from 'moment';
+import { isNaN } from 'lodash';
+import PropTypes from 'prop-types';
 
 import './modalAddExpense.less';
-import moment from "moment";
-import { isNaN } from "lodash";
+
+const propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    sendAction: PropTypes.func.isRequired,
+    closeModal: PropTypes.func.isRequired,
+    modalInfo: PropTypes.object.isRequired,
+};
 
 const inputDefaultValues = {
     price: '',
@@ -67,5 +75,7 @@ const ModalAddExpense = (props) => {
         </Modal>
     );
 };
+
+ModalAddExpense.propTypes = propTypes;
 
 export default ModalAddExpense;

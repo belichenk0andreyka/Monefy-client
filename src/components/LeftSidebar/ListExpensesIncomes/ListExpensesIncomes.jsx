@@ -1,10 +1,16 @@
-import React from 'react';
 import { map, capitalize } from 'lodash';
+import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 import { getAllExpensesIncomes } from 'helpers/actionHelper';
 
 import './ListExpensesIncomes.less'
+
+const propTypes = {
+    actionsData: PropTypes.object.isRequired,
+    actionsType: PropTypes.string.isRequired,
+};
 
 const ListExpensesIncomes = ({ actionsData, actionsType }) => {
     const [actions, setActions] = React.useState({});
@@ -47,5 +53,7 @@ const ListExpensesIncomes = ({ actionsData, actionsType }) => {
         </div>
     ));
 };
+
+ListExpensesIncomes.propTypes = propTypes;
 
 export default ListExpensesIncomes;

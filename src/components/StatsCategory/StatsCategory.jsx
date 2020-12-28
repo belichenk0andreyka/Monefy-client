@@ -1,10 +1,18 @@
 import React from 'react';
 import map from 'lodash/map';
+import PropTypes from 'prop-types';
+
 import { getPercentExpense } from 'helpers/statsCategoryHelper';
 
 import './StatsCategory.less'
 
-const StatsCategory = ({chartData, financeData, openModal}) => {
+const propTypes = {
+    chartData: PropTypes.object.isRequired,
+    financeData: PropTypes.object.isRequired,
+    openModal: PropTypes.func.isRequired,
+};
+
+const StatsCategory = ({ chartData, financeData, openModal }) => {
     return (
         <div className='stats-categories'>
             {map(chartData.chatItems, (item, index) => (
@@ -17,5 +25,7 @@ const StatsCategory = ({chartData, financeData, openModal}) => {
         </div>
     );
 };
+
+StatsCategory.propTypes = propTypes;
 
 export default StatsCategory;

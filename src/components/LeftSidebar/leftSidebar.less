@@ -1,59 +1,67 @@
 .leftSidebar{
   width: 23%;
-  min-width: 200px;
+  min-width: 250px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 
-  .ant-tabs {
-    height: 100%;
-    .ant-tabs-nav {
-      margin-bottom: 0;
+  @media (max-width: 1000px) {
+    width: 30%;
+  }
 
-      &::before {
-        border-bottom: 2px solid #054654;
-      }
-      .ant-tabs-nav-list {
-        width: 100%;
-        .ant-tabs-tab {
-          margin: 0;
-          width: 50%;
-          display: flex;
-          justify-content: center;
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.tabs-sidebar__left {
+  height: 100%;
+  .ant-tabs-nav {
+    margin-bottom: 0;
+
+    &::before {
+      border-bottom: 2px solid #054654;
+    }
+    .ant-tabs-nav-list {
+      width: 100%;
+      .ant-tabs-tab {
+        margin: 0;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        color: #000000;
+
+        &:hover {
           color: #000000;
-
-          &:hover {
-            color: #000000;
-          }
         }
-        .ant-tabs-tab-active {
-          .ant-tabs-tab-btn {
-            color: #7AC795;
-          }
+      }
+      .ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+          color: #7AC795;
         }
-        .ant-tabs-ink-bar {
-          background: #7AC795;
-        }
+      }
+      .ant-tabs-ink-bar {
+        background: #7AC795;
       }
     }
-    .ant-tabs-content-holder {
-      padding: 15px;
-      overflow: scroll;
+  }
+  .ant-tabs-content-holder {
+    padding: 15px;
+    overflow: scroll;
 
-      /* width */
-      &::-webkit-scrollbar {
-        width: 0;
-      }
-      /* Track */
-      &::-webkit-scrollbar-track {
-        background: white;
-      }
-      /* Handle */
-      &::-webkit-scrollbar-thumb {
-        background: #888;
-      }
-      /* Handle on hover */
-      &::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
+    /* width */
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: white;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
     }
   }
 }

@@ -1,11 +1,17 @@
 import React from 'react';
-import classNames from 'classnames';
 import { map } from 'lodash';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Carousel from 'react-elastic-carousel';
 
 import { getDateRangeArray } from 'helpers/actionHelper';
 
 import './rangeMonths.less'
+
+const propTypes = {
+    dateRange: PropTypes.object.isRequired,
+    getActionsByDate: PropTypes.func.isRequired,
+};
 
 const RangeMonths = (props) => {
     const [activeAction, setActiveAction] = React.useState({});
@@ -36,5 +42,7 @@ const RangeMonths = (props) => {
         </Carousel>
     )
 };
+
+RangeMonths.propTypes = propTypes;
 
 export default RangeMonths;

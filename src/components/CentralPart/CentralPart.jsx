@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PieChart from 'components/PieChart';
 import RangeMonths from 'components/RangeMonths';
@@ -8,6 +9,12 @@ import { getDefaultMonth } from 'helpers/actionHelper';
 import { getChartData } from 'helpers/pieHelper';
 
 import './centralPart.less';
+
+const propTypes = {
+    actionsData: PropTypes.object.isRequired,
+    financeData: PropTypes.object.isRequired,
+    getActionsByDate: PropTypes.func.isRequired,
+}
 
 const CentralPart = ({ actionsData, getActionsByDate, financeData }) => {
     const [chartData, setChartData] = React.useState({});
@@ -33,5 +40,7 @@ const CentralPart = ({ actionsData, getActionsByDate, financeData }) => {
         </div>
     );
 }
+
+CentralPart.propTypes = propTypes;
 
 export default CentralPart;

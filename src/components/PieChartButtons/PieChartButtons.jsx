@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './pieChartButtons.less'
+
+const propTypes = {
+    openModal: PropTypes.func.isRequired,
+};
 
 const PieChartButtons = ({ openModal }) => {
     return (
@@ -11,5 +16,7 @@ const PieChartButtons = ({ openModal }) => {
         </div>
     );
 };
+
+PieChartButtons.propTypes = propTypes;
 
 export default PieChartButtons;

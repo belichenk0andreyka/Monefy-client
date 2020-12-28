@@ -1,6 +1,7 @@
-import { getActionsExpensesData, getActionsIncomesData } from 'store/seletors/actionSelectors';
-import ListExpensesIncomes from './ListExpensesIncomes';
 import { connect } from 'react-redux';
+
+import ListExpensesIncomes from './ListExpensesIncomes';
+import { getActionsExpensesData, getActionsIncomesData } from 'store/seletors/actionSelectors';
 
 const mapStateToProps = (state, ownProps) => ({
     actionsData: ownProps.actionsType === 'expenses'

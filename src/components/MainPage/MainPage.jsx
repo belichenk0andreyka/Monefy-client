@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Header from 'components/Header';
 import LeftSidebar from 'components/LeftSidebar';
@@ -7,8 +8,14 @@ import ModalBuySell from 'components/Modals/ModalBuySell';
 import ModalAddAction from 'components/Modals/ModalAddAction';
 import ModalAddExpense from 'components/Modals/ModalAddExpense';
 import CentralPart from 'components/CentralPart';
+import RightDrawer from 'components/RightDrawer';
+import LeftDrawer from 'components/LeftDrawer';
 
 import './mainPage.less';
+
+const propTypes = {
+    getRangeDate: PropTypes.func.isRequired,
+};
 
 const MainPage = (props) => {
     React.useEffect(() => {
@@ -25,8 +32,12 @@ const MainPage = (props) => {
             <ModalBuySell />
             <ModalAddExpense />
             <ModalAddAction />
+            <RightDrawer />
+            <LeftDrawer />
         </div>
     );
 }
+
+MainPage.propTypes = propTypes;
 
 export default MainPage;

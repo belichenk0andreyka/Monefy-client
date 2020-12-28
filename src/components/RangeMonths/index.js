@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import RangeMonths from "./RangeMoths";
+import RangeMonths from './RangeMoths';
 import { getDateRange } from 'store/seletors/actionSelectors';
 import { getActions } from 'store/actions/buySellActions';
 

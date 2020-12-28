@@ -1,12 +1,14 @@
 import { filter, omitBy, get } from 'lodash';
 
-import { OPEN_MODAL, CLOSE_MODAL, CLOSE_ALL_MODALS } from 'store/actions/uiActions';
+import { OPEN_MODAL, CLOSE_MODAL, CLOSE_ALL_MODALS, TOGGLE_RIGHT_DRAWER, TOGGLE_LEFT_DRAWER } from 'store/actions/uiActions';
 
 const initialState = {
     modal: {
         modals: [],
         modalsInfo: {},
     },
+    rightDrawer: false,
+    leftDrawer: false,
 };
 
 const uiReducer = (state = initialState, action) => {
@@ -19,6 +21,16 @@ const uiReducer = (state = initialState, action) => {
             return {
                 ...state,
                 modal: initialState.modal,
+            };
+        case TOGGLE_RIGHT_DRAWER:
+            return {
+                ...state,
+                rightDrawer: !state.rightDrawer,
+            };
+        case TOGGLE_LEFT_DRAWER:
+            return {
+                ...state,
+                leftDrawer: !state.leftDrawer,
             };
         default:
             return state

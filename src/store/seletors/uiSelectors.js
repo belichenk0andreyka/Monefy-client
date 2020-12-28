@@ -10,6 +10,14 @@ export const getAllModals = createSelector(
     getUiReducer,
     state => state.modal.modals
 );
+export const getRightDrawer = createSelector(
+    getUiReducer,
+    state => state.rightDrawer
+);
+export const getLeftDrawer = createSelector(
+    getUiReducer,
+    state => state.leftDrawer
+);
 export const getAllModalsInfo = createSelector(
     getUiReducer,
     state => state.modal.modalInfo

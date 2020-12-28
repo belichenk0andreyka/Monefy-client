@@ -1,7 +1,8 @@
+import { connect } from 'react-redux';
+
 import StatsCategory from './StatsCategory';
 import { openModal } from 'store/actions/uiActions';
 import { MODAL_TYPES } from 'constants/constants';
-import { connect } from 'react-redux';
 
 
 const mapDispatchToProps = (dispatch) => ({

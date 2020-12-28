@@ -1,3 +1,3 @@
-import WrapAuthReg from "./WrapAuthReg";
+import WrapAuthReg from './WrapAuthReg';
 
 export default WrapAuthReg;

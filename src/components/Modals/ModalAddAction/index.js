@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import ModalAddAction from './ModalAddAction';
 import { getModalIsOpen } from 'store/seletors/uiSelectors';
 import { MODAL_TYPES } from 'constants/constants';

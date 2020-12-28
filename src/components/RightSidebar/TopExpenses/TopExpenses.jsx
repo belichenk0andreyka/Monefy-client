@@ -1,34 +1,38 @@
 import React from 'react';
-import { map } from 'lodash';
+import { isEmpty } from 'lodash';
+import PropTypes from 'prop-types';
+
+import TopExpensesBody from './TopExpensesBody';
+import { getTopExpenses } from 'helpers/actionHelper';
 
 import './TopExpenses.less';
 
-const TopExpenses = ({ actionsData }) => {
+const propTypes = {
+    actionsData: PropTypes.object.isRequired,
+    financeData: PropTypes.object.isRequired,
+};
+
+const TopExpenses = ({ actionsData, financeData }) => {
+    const [topExpenses, setTopExpenses] = React.useState({});
+    const [showMore, setShowMore] = React.useState(true);
+    React.useEffect(() => {
+        const filterExpenses = getTopExpenses(actionsData.chartData);
+        if (showMore) filterExpenses.splice(3, filterExpenses.length - 1);
+        setTopExpenses(filterExpenses);
+    }, [actionsData.chartData, showMore]);
     return (
         <div className='top-expenses'>
-            <div className='top-expenses__title'>
-                <span>Top Expenses</span>
-            </div>
-            <div className='top-expenses__description'>
-                <span>Current month</span>
-            </div>
-            {map(actionsData.chartData, (value, key) => (
-                <div className='expense-item__container'>
-                    <div className='expense-item'>
-                        <div className='expense-item__name'>
-                            <span>{key}</span>
-                        </div>
-                        <div className='expense-item__price'>
-                            <span>{value}</span>
-                        </div>
-                    </div>
-                    <div className='expense-item__progress'>
-                        <div className={`${key.toLowerCase()}-background`} />
-                    </div>
-                </div>
-            ))}
+            <TopExpensesBody
+                topExpenses={topExpenses}
+                financeData={financeData}
+                setShowMore={setShowMore}
+                showMore={showMore}
+                isLoading={isEmpty(topExpenses)}
+            />
         </div>
     );
 };
+
+TopExpenses.propTypes = propTypes;
 
 export default TopExpenses;

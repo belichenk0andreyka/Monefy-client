@@ -2,6 +2,7 @@ import React from 'react';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import PropTypes from 'prop-types';
+
 import { notificationHelper } from 'helpers/notifications';
 
 import './SocialButtonAuth.less'

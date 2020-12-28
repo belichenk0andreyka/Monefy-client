@@ -1,5 +1,5 @@
 import { AUTH_USER_SUCCESS } from 'store/actions/authActions';
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
 const initialState = {
     token: Cookies.get('token') || '',

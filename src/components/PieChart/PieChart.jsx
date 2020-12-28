@@ -1,12 +1,18 @@
 import React from 'react';
 import Chart from 'chart.js';
 import map from 'lodash/map';
+import PropTypes from 'prop-types';
 
 import { writeTextCenter } from 'helpers/pieHelper';
 import { CATEGORIES_COLORS } from 'constants/constants';
 
-
 import './pieChart.less';
+
+const propTypes = {
+    chartData: PropTypes.object.isRequired,
+    financeData: PropTypes.object.isRequired,
+    openModal: PropTypes.func.isRequired,
+};
 
 const PieChart = ({ chartData, financeData, openModal }) => {
     React.useEffect(() => {
@@ -62,5 +68,7 @@ const PieChart = ({ chartData, financeData, openModal }) => {
         </div>
     );
 };
+
+PieChart.propTypes = propTypes;
 
 export default PieChart;
