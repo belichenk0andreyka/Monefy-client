@@ -3,7 +3,6 @@ import Chart from 'chart.js';
 import map from 'lodash/map';
 import PropTypes from 'prop-types';
 
-import { writeTextCenter } from 'helpers/pieHelper';
 import { CATEGORIES_COLORS } from 'constants/constants';
 
 import './pieChart.less';
@@ -16,7 +15,6 @@ const propTypes = {
 
 const PieChart = ({ chartData, financeData, openModal }) => {
     React.useEffect(() => {
-        Chart.pluginService.register(writeTextCenter);
         const ctx = document.getElementById("myChart");
         const myChart = new Chart(ctx, {
             type: "doughnut",
@@ -49,22 +47,18 @@ const PieChart = ({ chartData, financeData, openModal }) => {
                 legend: {
                     display: false,
                 },
-                elements: {
-                    center: {
-                        text: 'Red is 2/3 of the total numbers',
-                        color: '#FF6384',
-                        fontStyle: 'Arial',
-                        sidePadding: 20,
-                        minFontSize: 25,
-                        lineHeight: 25
-                    },
-                }
             },
         });
     }, [chartData]);
     return (
         <div className='pieChart-wrapper'>
             <canvas id="myChart" />
+            <div className='pieChart_text'>
+                <div className='pieChart_text__item text__title'>Expenses</div>
+                <div className='pieChart_text__item text_expense__value'>{financeData.consumption} ₴</div>
+                <div className='pieChart_text__item text__title'>Income</div>
+                <div className='pieChart_text__item text_income__value'>{financeData.profit} ₴</div>
+            </div>
         </div>
     );
 };

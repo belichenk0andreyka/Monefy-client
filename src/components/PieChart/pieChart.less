@@ -1,9 +1,62 @@
 @import '../../utils/index.less';
 
+.text_expense_income {
+  font-size: 20px;
+  font-weight: bold;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 500px) {
+    font-size: 13px;
+  }
+}
+
 .pieChart-wrapper {
   .flex(center, flex-start);
   position: absolute;
   height: 55%;
   width: 80%;
   left: -15%;
+
+  .pieChart_text {
+    .flex(flex-end, flex-start, column);
+    position: absolute;
+    height: 100%;
+    width: 81%;
+    left: -15%;
+
+    @media (min-width: 1000px) {
+      height: 125%;
+    }
+    @media (max-width: 500px) {
+      height: 80%;
+    }
+
+    &__item {
+      .flex();
+      width: 40%;
+    }
+
+    .text__title {
+      font-size: 26px;
+      font-weight: normal;
+      @media (max-width: 1000px) {
+        font-size: 20px;
+      }
+      @media (max-width: 500px) {
+        font-size: 15px;
+      }
+    }
+
+    .text_expense__value {
+      .text_expense_income();
+      color: @bittersweet;
+    }
+
+    .text_income__value {
+      .text_expense_income();
+      color: @caribbean_green;
+    }
+  }
 }
