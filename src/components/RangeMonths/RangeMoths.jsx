@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Carousel from 'react-elastic-carousel';
 
+import { breakPoints } from 'helpers/carouselBreakPoints';
 import { getDateRangeArray } from 'helpers/actionHelper';
 
 import './rangeMonths.less'
@@ -28,8 +29,8 @@ const RangeMonths = (props) => {
     }
     return (
         <Carousel
+            breakPoints={breakPoints}
             ref={carousel}
-            itemsToShow={5}
             pagination={false}
             className='rangeMonth'
         >

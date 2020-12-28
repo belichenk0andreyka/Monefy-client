@@ -13,7 +13,7 @@ const propTypes = {
 };
 
 const TopExpenses = ({ actionsData, financeData }) => {
-    const [topExpenses, setTopExpenses] = React.useState({});
+    const [topExpenses, setTopExpenses] = React.useState([]);
     const [showMore, setShowMore] = React.useState(true);
     React.useEffect(() => {
         const filterExpenses = getTopExpenses(actionsData.chartData);

@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 import { history } from 'index';
 import api from 'api/apiResources';
 import { notificationHelper } from 'helpers/notifications';
-import { authUserSuccess } from 'store/actions/authActions';
+import { authUserSuccess, logoutUserSuccess } from 'store/actions/authActions';
 
 export function* authWorker (action) {
     const { email, password } = action.payload;
@@ -62,4 +62,9 @@ function* authSuccess (request) {
     } else {
         notificationHelper('Error', request.data.msg,'error');
     }
+}
+
+export function* logoutUserWorker () {
+    yield Cookies.remove('token');
+    yield put(logoutUserSuccess());
 }

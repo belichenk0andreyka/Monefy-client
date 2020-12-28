@@ -24,7 +24,7 @@ const TopExpensesBody = ({ topExpenses, financeData, setShowMore, showMore }) =>
             </div>
             <div className='expenses_container'>
                 {map(topExpenses, (value) => (
-                    <div className='expense'>
+                    <div className='expense' key={value.category}>
                         <div className='expense-item'>
                             <div className='expense-item__name'>
                                 <span>{capitalize(value.category)}</span>

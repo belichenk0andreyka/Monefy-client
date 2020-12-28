@@ -13,7 +13,7 @@ const RightDrawer = ({ isVisible, toggleDrawer }) => {
             closable={false}
             onClose={toggleDrawer}
             visible={isVisible}
-            width={400}
+            width={350}
         >
             <BalanceChart />
             <TopExpenses />

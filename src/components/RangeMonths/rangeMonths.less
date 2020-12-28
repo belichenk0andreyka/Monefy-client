@@ -1,8 +1,12 @@
 .rec.rec-carousel-wrapper.rangeMonth {
   display: flex;
   justify-content: center;
-  width: 55%;
-  min-width: 500px;
+  width: 500px;
+
+  @media (max-width: 500px) {
+    min-width: 380px;
+    width: 100%;
+  }
 
   .rec.rec-arrow, .rec.rec-arrow:hover, .rec.rec-arrow:focus {
     background-color: transparent;

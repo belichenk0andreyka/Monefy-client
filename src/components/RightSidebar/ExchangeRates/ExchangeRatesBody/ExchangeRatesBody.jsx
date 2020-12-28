@@ -20,10 +20,10 @@ const ExchangeRatesBody = ({ currentCurrencies }) => {
                     <div>RUB/UAH</div>
                 </div>
                 <div className='currencies_numbers__block'>
-                    {map(currentCurrencies, (value) => <div>{value.saleRate}</div>)}
+                    {map(currentCurrencies, (value) => <div key={value.currency}>{value.saleRate}</div>)}
                 </div>
                 <div className='currencies_numbers__block'>
-                    {map(currentCurrencies, (value) => <div>{value.purchaseRate}</div>)}
+                    {map(currentCurrencies, (value) => <div key={value.currency}>{value.purchaseRate}</div>)}
                 </div>
             </div>
         </div>

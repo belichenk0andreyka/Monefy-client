@@ -30,6 +30,7 @@ const CentralPart = ({ actionsData, getActionsByDate, financeData }) => {
             <div className='chart-block'>
                 <PieChart
                     chartData={chartData}
+                    financeData={financeData}
                 />
                 <StatsCategory
                     financeData={financeData}
