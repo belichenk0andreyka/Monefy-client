@@ -4,6 +4,10 @@
   .flex(flex-start, center, column);
   margin-left: 50%;
 
+  @media (max-width: 500px) {
+    margin-left: 45%;
+  }
+
   .stats-categories__item {
     .flex(center, flex-start);
 
@@ -11,18 +15,23 @@
       width: 25px;
       font-size: @fz-medium;
       font-weight: bold;
+
+      @media (max-width: 500px) {
+        font-size: 15px;
+      }
     }
 
     .category-item__block {
       cursor: pointer;
       width: 60px;
-      height: @margin-big;
+      height: 15px;
       background: grey;
       border-radius: @margin-medium;
       margin: 0 @margin-big;
 
       @media (max-width: 500px) {
         width: 40px;
+        height: 12px;
       }
     }
   }
