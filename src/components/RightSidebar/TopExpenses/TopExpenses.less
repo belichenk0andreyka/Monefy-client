@@ -1,0 +1,56 @@
+@import '../../../utils/index.less';
+
+.top-expenses {
+  .flex(flex-start, flex-start, column);
+  box-shadow: @box_shadow;
+  padding: @margin-medium;
+  margin-bottom: @margin-medium;
+
+  &__title {
+    font-size: 20px;
+  }
+  &__description {
+    font-size: 14px;
+  }
+
+  &__button {
+    .flex(center, flex-end);
+    width: 100%;
+    margin-top: @margin-medium;
+
+    button {
+      width: fit-content;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: @fz-small;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
+
+.expenses_container {
+  width: 100%;
+
+  .expense {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: @margin-medium;
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-progress {
+      height: 20px;
+
+      &__fill {
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,8 +1,9 @@
-import { map, capitalize, isNaN } from 'lodash';
 import React from 'react';
 import moment from 'moment';
 import { Modal } from 'antd';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { map, capitalize, isNaN } from 'lodash';
 
 import {
     CATEGORIES_PROFIT,
@@ -10,6 +11,13 @@ import {
 } from 'constants/constants';
 
 import './modalBuySell.less'
+
+const propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    sendAction: PropTypes.func.isRequired,
+    closeModal: PropTypes.func.isRequired,
+    modalInfo: PropTypes.object.isRequired,
+};
 
 const inputDefaultValues = {
     price: '',
@@ -39,8 +47,8 @@ const ModalBuySell = (props) => {
     const CATEGORIES = props.modalInfo.type ? CATEGORIES_PROFIT : CATEGORIES_EXPENSE;
     return (
         <Modal
-            title={`New ${modalTitle}`}
             centered
+            title={`New ${modalTitle}`}
             visible={props.isOpen}
             onOk={handleClickOk}
             onCancel={handleClickCancel}
@@ -104,5 +112,7 @@ const ModalBuySell = (props) => {
         </Modal>
     );
 }
+
+ModalBuySell.propTypes = propTypes;
 
 export default ModalBuySell;

@@ -1,0 +1,71 @@
+@import '../../../utils/index.less';
+
+.expense-block {
+  &__date {
+    padding: 0 20px;
+    font-size: @fz-medium;
+    font-weight: 500;
+    margin-bottom: @margin-medium;
+  }
+
+  .expense:first-child {
+    margin-top: 0;
+  }
+
+  .expense {
+    .flex(center, space-between);
+    min-height: 40px;
+    margin: @margin-medium auto;
+    padding: 2px @margin-medium;
+    height: fit-content;
+    border-bottom: 1px solid @teal_blue;
+
+    &-img {
+      height: 35px;
+
+      img {
+        height: 100%;
+      }
+    }
+    &-info {
+      .flex(flex-start, space-between);
+      width: calc(100% - 35px);
+
+      .expense-left {
+        width: 100%;
+        overflow: hidden;
+        padding: 0 @margin-big;
+
+        &__name {
+          font-weight: 500;
+        }
+
+        &__description {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: @fz-small;
+        }
+      }
+
+      .expense-right {
+        width: fit-content;
+
+        &__price {
+          font-weight: 500;
+          font-size: @fz-medium;
+          text-align: right;
+
+          span {
+            white-space: nowrap;
+          }
+        }
+
+        &__time {
+          text-align: right;
+          font-size: @fz-small;
+        }
+      }
+    }
+  }
+}

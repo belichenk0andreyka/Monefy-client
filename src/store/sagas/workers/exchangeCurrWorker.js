@@ -1,19 +1,12 @@
-import { call } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import { notificationHelper } from 'helpers/notifications';
-import config from 'config/config';
-import moment from 'moment';
-import axios from 'axios';
+import api from 'api/apiResources';
+import { setExchangeCurr } from 'store/actions/exchangeCurrActions';
 
 export function* getExchangeCurr () {
     try {
-        const nowDate = moment().format('DD.MM.YYYY');
-        console.log(nowDate);
-        const request = yield call(() => axios.get(`${config.exchange}${nowDate}`,
-            {
-                headers : {'Access-Control-Allow-Origin': '*'},
-            }
-        ));
-        console.log(request);
+        const request = yield call(() => api.currencies.getCurrencies());
+        yield put(setExchangeCurr(request.data.exchangeRate));
     } catch (error) {
         notificationHelper(
             'Error',

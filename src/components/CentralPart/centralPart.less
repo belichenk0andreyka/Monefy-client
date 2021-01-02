@@ -1,8 +1,27 @@
+@import '../../utils/index.less';
+
 .centralPart {
-  width: 60%;
+  .flex(center, space-between, column);
+  width: 50%;
   padding: 5vh 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
+  box-shadow: @box_shadow;
+
+  @media (max-width: 1000px) {
+    width: 65%;
+  }
+
+  @media (max-width: 800px) {
+    width: 95%;
+  }
+
+  .chart-block {
+    .flex();
+    width: 100%;
+    position: relative;
+  }
+
+  .centralPart_item {
+    width: 200px;
+    text-align: center;
+  }
 }

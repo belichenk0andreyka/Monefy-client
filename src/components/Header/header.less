@@ -1,14 +1,39 @@
+@import '../../utils/index.less';
+
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .flex(center, space-between);
   height: 60px;
   padding: 0 15%;
-  background: #7AC795;
+  background: @de_york;
+  position: relative;
 
   &-name {
     font-family: 'Sansita Swashed', cursive;
     font-size: 20px;
-    color: white;
+    color: @white;
+  }
+
+  &_icons__block {
+    position: absolute;
+    right: 20px;
+    height: fit-content;
+    width: fit-content;
+
+    img {
+      height: 20px;
+      cursor: pointer;
+      margin-right: 25px;
+    }
+
+    .header_icons__charts {
+      @media (min-width: 1000px) {
+        display: none;
+      }
+    }
+    .header_icons__list {
+      @media (min-width: 800px) {
+        display: none;
+      }
+    }
   }
 }

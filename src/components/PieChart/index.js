@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 
-import { getActionsExpensesData, getActionsFinancialData } from 'store/seletors/actionSelectors';
 import PieChart from './PieChart';
 import { openModal } from 'store/actions/uiActions';
 import { MODAL_TYPES } from 'constants/constants';
+import { getActionsFinancialData } from 'store/seletors/actionSelectors';
 
-const mapStateToProps = (state) => ({
-    actionsData: getActionsExpensesData(state),
+const mapStateToProps = state => ({
     financeData: getActionsFinancialData(state),
 });
 

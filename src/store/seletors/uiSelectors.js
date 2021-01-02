@@ -10,6 +10,14 @@ export const getAllModals = createSelector(
     getUiReducer,
     state => state.modal.modals
 );
+export const getRightDrawer = createSelector(
+    getUiReducer,
+    state => state.rightDrawer
+);
+export const getLeftDrawer = createSelector(
+    getUiReducer,
+    state => state.leftDrawer
+);
 export const getAllModalsInfo = createSelector(
     getUiReducer,
     state => state.modal.modalInfo
@@ -30,4 +38,10 @@ export const getModalInfoActionCreate = createSelector(
 export const getModalInfoAddExpense = createSelector(
     getAllModalsInfo,
     state => get(state, MODAL_TYPES.ADD_EXPENSE_MODAL, {}),
+)
+
+export const getModalIsOpen = createSelector(
+    getAllModals,
+    (state, props) => props,
+    (modals, modalName) => modals.includes(modalName)
 )

@@ -1,8 +1,8 @@
 import React from 'react';
-import { isEmpty } from 'lodash';
 import moment from 'moment';
+import { isEmpty, reduce, sortBy, forEach, orderBy } from 'lodash';
 
-import { notificationHelper } from "./notifications";
+import { notificationHelper } from './notifications';
 
 export const validateAction = (category, price) => {
     const obj = { validPrice: true, validCategory: true };
@@ -88,4 +88,52 @@ export const parseNumber = (number) => {
             </span>
         )
     }
+}
+
+export const getAllExpensesIncomes = (data) => {
+    const arrayOfData = reduce(data, (result, value) => {
+        const array = reduce(value, (acc, data) => {
+            acc.push(data);
+            return acc;
+        }, []);
+        return [...result, ...array];
+    }, []);
+    const newArray = sortBy(arrayOfData, 'date').reverse();
+    const objOfExpenses = {};
+    let prevValue = '';
+    forEach(newArray, item => {
+        const thisDate = moment(item.date).format('MM.DD.YYYY');
+        if (prevValue !== thisDate) {
+            objOfExpenses[thisDate] = [item]
+        } else {
+            objOfExpenses[thisDate].push(item);
+        }
+        prevValue = thisDate;
+    });
+    return objOfExpenses;
+};
+
+export const getTopExpenses = expenses => {
+    const arrayExpenses = [];
+    forEach(expenses, (value, key) => {
+        arrayExpenses.push({category: key, price: expenses[key]})
+    });
+    return orderBy(arrayExpenses, ['price'], ['desc']);
+}
+
+export const getExpensesForLineChart = actions => {
+    let arrayExpenses = [];
+    if (actions) {
+        forEach(Object.values(actions), value => arrayExpenses = [...arrayExpenses, ...Object.values(value)]);
+        arrayExpenses = orderBy(arrayExpenses, ['date'], ['asc']);
+        let lastDate = '';
+        let array = [];
+        forEach(arrayExpenses, value => {
+            if (lastDate !== moment(value.date).format('DD.MM.YYYY') || !array.length) array.push({ date: value.date, price: value.price });
+            else array[array.length - 1].price += value.price;
+            lastDate = moment(value.date).format('DD.MM.YYYY');
+        });
+        return array;
+    }
+    return arrayExpenses;
 }

@@ -7,6 +7,7 @@ export const validateRegistrationSignIn = {
 export const MODAL_TYPES = {
     ACTION_MODAL_CREATE: 'modalActionCreate',
     ADD_EXPENSE_MODAL: 'addExpenseModal',
+    ADD_ACTIONS: 'addActionsModal',
 };
 
 export const CATEGORIES_EXPENSE = {
@@ -25,3 +26,14 @@ export const CATEGORIES_PROFIT = {
     SAVING: 'saving',
     DEPOSIT: 'deposit',
 };
+
+export const CATEGORIES_COLORS = {
+    food: '#A9D9C3',
+    cafe: '#69B1C2',
+    connection: '#5C80AC',
+    entertainment: '#FBDD7B',
+    taxi: '#F3A578',
+    bill: '#58BB7A',
+    health: '#FFB3B3',
+    transport: '#C3C9CE',
+}

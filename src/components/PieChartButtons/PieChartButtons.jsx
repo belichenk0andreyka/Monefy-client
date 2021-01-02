@@ -1,18 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './pieChartButtons.less'
 
-const PieChartButtons = (props) => {
+const propTypes = {
+    openModal: PropTypes.func.isRequired,
+};
+
+const PieChartButtons = ({ openModal }) => {
     return (
-        <div className='pieChartButtons-wrapper'>
-            <div className='pieChartButtons-remove' onClick={() => props.openModal(false)}>
-                <span>&ndash;</span>
-            </div>
-            <div className='pieChartButtons-add' onClick={() => props.openModal(true)}>
-                <span>+</span>
+        <div className='pieChartButton-wrapper'>
+            <div className='pieChartButton' onClick={openModal}>
+                <img src="src/assets/plus.svg" />
             </div>
         </div>
     );
 };
+
+PieChartButtons.propTypes = propTypes;
 
 export default PieChartButtons;

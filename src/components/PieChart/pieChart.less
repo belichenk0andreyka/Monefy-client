@@ -1,43 +1,66 @@
-.chart-wrapper{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+@import '../../utils/index.less';
 
-  .chart {
-    z-index: 2;
+.text_expense_income {
+  font-size: 20px;
+  font-weight: bold;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 500px) {
+    font-size: 13px;
+  }
+}
+
+.pieChart-wrapper {
+  .flex(center, flex-start);
+  position: absolute;
+  height: 55%;
+  width: 80%;
+  left: -15%;
+
+  @media (max-width: 500px) {
+    left: -19%;
   }
 
-  .finance-date {
+  .pieChart_text {
+    .flex(flex-end, flex-start, column);
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    left: 35%;
-    top: 42%;
+    height: 100%;
+    width: 81%;
+    left: -15%;
 
-    .finance-date__income {
-      color: #3F80C5;
+    @media (min-width: 1000px) {
+      height: 125%;
     }
-    .finance-date__expense {
-      color: #C57B7F;
+    @media (max-width: 500px) {
+      height: 80%;
     }
-    .finance-date__balance {
-      color: #7AC795;
-    }
-  }
-  .empty-chart-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
 
-    .empty-donat-text {
-      position: absolute;
-      font-size: 20px;
+    &__item {
+      .flex();
+      width: 40%;
+    }
+
+    .text__title {
+      font-size: 26px;
+      font-weight: normal;
+      @media (max-width: 1000px) {
+        font-size: 20px;
+      }
+      @media (max-width: 500px) {
+        font-size: 15px;
+      }
+    }
+
+    .text_expense__value {
+      .text_expense_income();
+      color: @bittersweet;
+    }
+
+    .text_income__value {
+      .text_expense_income();
+      color: @caribbean_green;
     }
   }
 }

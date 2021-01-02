@@ -1,5 +1,68 @@
+@import '../../utils/index.less';
+
 .leftSidebar{
-  border: 1px solid black;
-  width: 20%;
-  min-width: 200px;
+  width: 23%;
+  min-width: 250px;
+  box-shadow: @box_shadow;
+
+  @media (max-width: 1000px) {
+    width: 30%;
+  }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.tabs-sidebar__left {
+  height: 100%;
+  .ant-tabs-nav {
+    margin-bottom: 0;
+
+    &::before {
+      border-bottom: 2px solid @teal_blue;
+    }
+    .ant-tabs-nav-list {
+      width: 100%;
+      .ant-tabs-tab {
+        .flex();
+        margin: 0;
+        width: 50%;
+        color: @black;
+
+        &:hover {
+          color: @black;
+        }
+      }
+      .ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+          color: @de_york;
+        }
+      }
+      .ant-tabs-ink-bar {
+        background: @de_york;
+      }
+    }
+  }
+  .ant-tabs-content-holder {
+    padding: @margin-big;
+    overflow: scroll;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: @white;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: @grey;
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: @emperor;
+    }
+  }
 }

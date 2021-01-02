@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import SocialButtonAuth from './SocialButtonAuth';
 import { authUserFacebook, authUserGoogle } from 'store/actions/authActions';
 
