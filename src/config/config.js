@@ -8,9 +8,9 @@ export default {
     rangeDate: '/api/actions/rangeDate',
     exchange: 'https://api.privatbank.ua/p24api/exchange_rates?json&date=',
     development: {
-        apiPrefix: 'http://34.121.107.165/server',
+        apiPrefix: 'http://35.222.78.230/server',
     },
     production: {
-        apiPrefix: 'http://34.121.107.165/server',
+        apiPrefix: 'http://35.222.78.230/server',
     },
 };
