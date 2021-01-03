@@ -26,11 +26,11 @@ const ModalAddAction = ({ isOpen, closeModal, openModalAction }) => {
             footer={null}
         >
            <div className='buttons_wrapper'>
-               <div onClick={() => openActionModal(false)} className='action_button'>
+               <div onClick={() => openActionModal(true)} className='action_button'>
                    <div className='action_button__img'><img src="src/assets/incomeButton.svg" /></div>
                    <div className='action_button__name'>Income</div>
                </div>
-               <div onClick={() => openActionModal(true)} className='action_button'>
+               <div onClick={() => openActionModal(false)} className='action_button'>
                    <div className='action_button__img'><img src="src/assets/expenseButton.svg" /></div>
                    <div className='action_button__name'>Expense</div>
                </div>
